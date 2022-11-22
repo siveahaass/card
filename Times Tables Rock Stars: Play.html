@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<meta charset="utf-8">
+<title>Times Tables Rock Stars: Play</title>
+<base href="/">
+<link rel="icon" type="image/x-icon" href="ttrs-favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="HandheldFriendly" content="true">
+<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate, post-check=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#673ab7">
+<style>@import url('https://fonts.googleapis.com/css?family=Monoton');@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');body{margin:0;padding:0}[tl]{background-color:#300070;height:100vh;color:#fff;background:linear-gradient(to bottom, #261167 60%, #080015 100%);background-image:url('https://static.ttrockstars.com/game-bg/StudioBG-l.jpg'), url('https://static.ttrockstars.com/game-bg/StudioBG-l.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}[tl]>div{width:100%;text-align:center;background-image:radial-gradient(center top, circle farthest-side, rgba(196, 172, 221, 0.46), #250b3e);background-image:-o-radial-gradient(center top, circle farthest-side, rgba(196, 172, 221, 0.46), #250b3e);background-image:-ms-radial-gradient(center top, circle farthest-side, rgba(196, 172, 221, 0.46), #250b3e);background-image:-moz-radial-gradient(center top, circle farthest-side, rgba(196, 172, 221, 0.46), #250b3e);background-image:-webkit-radial-gradient(center top, circle farthest-side, rgba(196, 172, 221, 0.46), #250b3e);color:rgba(255, 255, 255, 0.9);margin:0 auto;height:100%;display:flex;flex-direction:column;gap:1rem;align-items:center;padding-top:8vh}[tl]>div>img{width:200px;height:7rem}[tl]>div>h1{font:400 26px/46px sans-serif;text-align:center;color:#fff;unicode-bidi:plaintext}</style><link rel="stylesheet" href="assets/init/c.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/init/c.css"></noscript>
+<link rel="manifest" href="manifest.json">
+<style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;font-display:block;src:url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+<meta name="theme-color" content="#1976d2">
+<script>
+    if ('caches' in window) {
+      caches.keys()
+        .then(function (keyList) {
+          return Promise.all(keyList.map(function (key) {
+            return caches.delete(key);
+          }));
+        })
+    }
+
+    if (navigator && navigator.serviceWorker) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (var registration of registrations) {
+          registration.unregister();
+        }
+      })
+    }
+
+    self.addEventListener('install', function (e) {
+      self.skipWaiting();
+    });
+
+    self.addEventListener('activate', function (e) {
+      if (self.clients && self.clients.claim) {
+        event.waitUntil(self.clients.claim());
+      }
+      if (self.registration && self.registration.unregister) {
+        self.registration.unregister()
+          .then(function () {
+            return self.clients.matchAll();
+          })
+          .then(function (clients) {
+            clients.forEach(client => client.navigate(client.url))
+          }).then(() => {
+            console.log('NGSW Safety Worker - unregistered old service worker');
+          });
+      }
+    });
+
+    if (/*@cc_on!@*/false || !!document['documentMode']) {
+      alert('Internet Explorer is no longer supported. Please use a different browser, such as Edge or Chrome.');
+    }
+  </script>
+
+<style>*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content:""}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"}body{margin:0;line-height:inherit}h1{font-size:inherit;font-weight:inherit}h1{margin:0}img{display:block;vertical-align:middle}img{max-width:100%;height:auto}*,:before,:after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }:root{--animate-duration:1s;--animate-delay:1s;--animate-repeat:1}body{overflow-y:visible!important;overflow-y:initial!important;height:100%;min-height:100%}:root{--swiper-theme-color:#007aff}:root{--swiper-navigation-size:44px}*|*:-webkit-full-screen:not(:root){position:fixed!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;min-width:0!important;max-width:none!important;min-height:0!important;max-height:none!important;box-sizing:border-box!important;object-fit:contain;transform:none!important}*|*:fullscreen:not(:root){position:fixed!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;min-width:0!important;max-width:none!important;min-height:0!important;max-height:none!important;box-sizing:border-box!important;-o-object-fit:contain;object-fit:contain;transform:none!important}@media print{*{-webkit-print-color-adjust:exact!important}}html,body{margin:0;height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch}@charset "UTF-8";:root{--animate-duration:1s;--animate-delay:1s;--animate-repeat:1}</style><link rel="stylesheet" href="styles.f8a34f0b31e933bc.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f8a34f0b31e933bc.css"></noscript></head>
+<body id="version-4.22.5271028">
+<ttr-root>
+<div tl="">
+<div><img src="https://ttrockstars.com/images/logos/ttrs-header-logo.svg">
+<h1>Loading...</h1>
+</div>
+</div>
+</ttr-root>
+<script src="assets/init/a.js"></script>
+<script src="assets/init/ios.js"></script>
+<script async="" src="https://js.stripe.com/v3/"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;668a119df58741a8bcdaaf26868dc071&quot;}"></script>
+<script src="runtime.bb5806b583a0e2c0.js" type="module"></script><script src="polyfills.c63909d1c3186320.js" type="module"></script><script src="main.664d6f65e113625c.js" type="module"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"761d11cbfb67ad9b","token":"e7e03ea97c194697bccdc6cc0471b60f","version":"2022.10.3","si":100}' crossorigin="anonymous"></script>
+</body></html>
